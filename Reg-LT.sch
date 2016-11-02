@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -60,6 +60,9 @@
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="6" fill="9" visible="no" active="no"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="no"/>
+<layer number="53" name="tGND_GNDA" color="7" fill="9" visible="no" active="no"/>
+<layer number="54" name="bGND_GNDA" color="1" fill="9" visible="no" active="no"/>
+<layer number="56" name="wert" color="7" fill="1" visible="no" active="no"/>
 <layer number="90" name="Modules" color="5" fill="1" visible="yes" active="yes"/>
 <layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
 <layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
@@ -70,8 +73,48 @@
 <layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="99" name="SpiceOrder" color="5" fill="1" visible="yes" active="yes"/>
+<layer number="100" name="Muster" color="7" fill="1" visible="no" active="no"/>
+<layer number="101" name="Patch_Top" color="12" fill="4" visible="yes" active="yes"/>
+<layer number="102" name="Vscore" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="103" name="tMap" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="104" name="Name" color="16" fill="1" visible="yes" active="yes"/>
+<layer number="105" name="tPlate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="106" name="bPlate" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="107" name="Crop" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="116" name="Patch_BOT" color="9" fill="4" visible="yes" active="yes"/>
+<layer number="121" name="_tsilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="122" name="_bsilk" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="125" name="_tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="144" name="Drill_legend" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="151" name="HeatSink" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="201" name="201bmp" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="202" name="202bmp" color="3" fill="10" visible="yes" active="yes"/>
+<layer number="203" name="203bmp" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="204" name="204bmp" color="5" fill="10" visible="yes" active="yes"/>
+<layer number="205" name="205bmp" color="6" fill="10" visible="yes" active="yes"/>
+<layer number="206" name="206bmp" color="7" fill="10" visible="yes" active="yes"/>
+<layer number="207" name="207bmp" color="8" fill="10" visible="yes" active="yes"/>
+<layer number="208" name="208bmp" color="9" fill="10" visible="yes" active="yes"/>
+<layer number="209" name="209bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="210" name="210bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="211" name="211bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="212" name="212bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="213" name="213bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="214" name="214bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="215" name="215bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="216" name="216bmp" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="217" name="217bmp" color="18" fill="1" visible="no" active="no"/>
+<layer number="218" name="218bmp" color="19" fill="1" visible="no" active="no"/>
+<layer number="219" name="219bmp" color="20" fill="1" visible="no" active="no"/>
+<layer number="220" name="220bmp" color="21" fill="1" visible="no" active="no"/>
+<layer number="221" name="221bmp" color="22" fill="1" visible="no" active="no"/>
+<layer number="222" name="222bmp" color="23" fill="1" visible="no" active="no"/>
+<layer number="223" name="223bmp" color="24" fill="1" visible="no" active="no"/>
+<layer number="224" name="224bmp" color="25" fill="1" visible="no" active="no"/>
 <layer number="250" name="Descript" color="3" fill="1" visible="no" active="no"/>
 <layer number="251" name="SMDround" color="12" fill="11" visible="no" active="no"/>
+<layer number="254" name="cooling" color="7" fill="1" visible="yes" active="yes"/>
 </layers>
 <schematic xreflabel="%F%N/%S.%C%R" xrefpart="/%S.%C%R">
 <libraries>
@@ -17941,32 +17984,6 @@ Source: Fairchild .. BAT54.pdf</description>
 <wire x1="3.81" y1="-5.08" x2="3.81" y2="-1.27" width="0.127" layer="21"/>
 <text x="-2.54" y="10.16" size="1.27" layer="25">&gt;NAME</text>
 </package>
-<package name="SD_MODULE-2X8H">
-<pad name="CS" x="-1.27" y="-20.32" drill="1"/>
-<pad name="+5V" x="-3.81" y="-20.32" drill="1"/>
-<pad name="+3V3" x="-6.35" y="-20.32" drill="1"/>
-<pad name="GND@1" x="-8.89" y="-20.32" drill="1"/>
-<pad name="MOSI" x="1.27" y="-20.32" drill="1"/>
-<pad name="SCK" x="3.81" y="-20.32" drill="1"/>
-<pad name="MISO" x="6.35" y="-20.32" drill="1"/>
-<pad name="GND@2" x="8.89" y="-20.32" drill="1"/>
-<pad name="P$9" x="-8.89" y="-22.86" drill="1"/>
-<pad name="P$10" x="-6.35" y="-22.86" drill="1"/>
-<pad name="P$11" x="-3.81" y="-22.86" drill="1"/>
-<pad name="P$12" x="-1.27" y="-22.86" drill="1"/>
-<pad name="P$13" x="1.27" y="-22.86" drill="1"/>
-<pad name="P$14" x="3.81" y="-22.86" drill="1"/>
-<pad name="P$15" x="6.35" y="-22.86" drill="1"/>
-<pad name="P$16" x="8.89" y="-22.86" drill="1"/>
-<wire x1="-15.24" y1="-25.4" x2="15.24" y2="-25.4" width="0.127" layer="21"/>
-<wire x1="15.24" y1="25.4" x2="15.24" y2="-25.4" width="0.127" layer="21"/>
-<wire x1="-15.24" y1="25.4" x2="-15.24" y2="-25.4" width="0.127" layer="21"/>
-<wire x1="-15.24" y1="25.4" x2="-12.7" y2="25.4" width="0.127" layer="21"/>
-<wire x1="12.7" y1="25.4" x2="15.24" y2="25.4" width="0.127" layer="21"/>
-<wire x1="12.7" y1="25.4" x2="-12.7" y2="25.4" width="0.127" layer="21" curve="-180"/>
-<text x="-3.81" y="-13.97" size="1.27" layer="27">&gt;VALUE</text>
-<text x="-3.81" y="-3.81" size="1.27" layer="25">&gt;NAME</text>
-</package>
 <package name="TO220AH">
 <description>&lt;b&gt;Molded Package&lt;/b&gt;&lt;p&gt;
 grid 2.54 mm</description>
@@ -18078,6 +18095,37 @@ grid 2.54 mm</description>
 <rectangle x1="2.921" y1="1.9558" x2="3.429" y2="3.0988" layer="51"/>
 <rectangle x1="4.191" y1="1.9558" x2="4.699" y2="3.0988" layer="51"/>
 </package>
+<package name="ATTEND-112">
+<smd name="VDD" x="-0.35" y="8.62" dx="2" dy="0.7" layer="1" rot="R90"/>
+<smd name="CLK" x="-1.45" y="8.62" dx="2" dy="0.7" layer="1" rot="R90"/>
+<smd name="VSS" x="-2.55" y="8.62" dx="2" dy="0.7" layer="1" rot="R90"/>
+<smd name="DAT0" x="-3.65" y="8.62" dx="2" dy="0.7" layer="1" rot="R90"/>
+<smd name="DAT1" x="-4.75" y="8.62" dx="2" dy="0.7" layer="1" rot="R90"/>
+<smd name="CMD" x="0.75" y="8.62" dx="2" dy="0.7" layer="1" rot="R90"/>
+<smd name="DAT3" x="1.85" y="8.62" dx="2" dy="0.7" layer="1" rot="R90"/>
+<smd name="DAT2" x="2.95" y="8.62" dx="2" dy="0.7" layer="1" rot="R90"/>
+<smd name="GND" x="4.2" y="8.62" dx="2" dy="0.85" layer="1" rot="R90"/>
+<smd name="CD" x="5.35" y="8.62" dx="2" dy="0.85" layer="1" rot="R90"/>
+<hole x="-5" y="5.02" drill="1.5"/>
+<hole x="5" y="5.02" drill="1.5"/>
+<smd name="S2" x="7.3" y="0.22" dx="2" dy="1.2" layer="1" rot="R90"/>
+<smd name="S1" x="-7.3" y="0.22" dx="2" dy="1.2" layer="1" rot="R90"/>
+<wire x1="5.65" y1="-4.48" x2="5.65" y2="-10.6397" width="0.127" layer="21"/>
+<wire x1="5.0097" y1="-11.28" x2="5.65" y2="-10.6397" width="0.127" layer="21" curve="90"/>
+<wire x1="5.0097" y1="-11.28" x2="-4.9429" y2="-11.28" width="0.127" layer="21"/>
+<wire x1="-5.65" y1="-10.5729" x2="-4.9429" y2="-11.28" width="0.127" layer="21" curve="89.983796"/>
+<wire x1="-5.65" y1="-10.5729" x2="-5.65" y2="-4.48" width="0.127" layer="21"/>
+<text x="0" y="-9.38" size="0.8128" layer="51" font="vector" ratio="18" rot="R180" align="center">card IN</text>
+<wire x1="6.65" y1="7.62" x2="-6.65" y2="7.62" width="0.127" layer="21"/>
+<wire x1="-6.65" y1="7.62" x2="-6.65" y2="-4.48" width="0.127" layer="21"/>
+<wire x1="6.65" y1="7.62" x2="6.65" y2="-4.48" width="0.127" layer="21"/>
+<wire x1="-5.65" y1="-4.48" x2="-6.65" y2="-4.48" width="0.127" layer="21"/>
+<wire x1="6.65" y1="-4.48" x2="5.65" y2="-4.48" width="0.127" layer="21"/>
+<wire x1="5.65" y1="-4.48" x2="4.4" y2="-3.23" width="0.127" layer="21" style="longdash" curve="90"/>
+<wire x1="4.4" y1="-3.23" x2="-4.4" y2="-3.23" width="0.127" layer="21" style="longdash"/>
+<wire x1="-5.65" y1="-4.48" x2="-4.4" y2="-3.23" width="0.127" layer="21" style="longdash" curve="-90"/>
+<text x="0" y="2.05" size="0.8128" layer="25" font="vector" ratio="18" rot="R180" align="center">&gt;NAME</text>
+</package>
 </packages>
 <symbols>
 <symbol name="RTC-MODULE">
@@ -18092,20 +18140,6 @@ grid 2.54 mm</description>
 <pin name="SDA" x="-15.24" y="-2.54" length="middle" direction="in"/>
 <pin name="SWQ" x="15.24" y="0" length="middle" direction="out" rot="R180"/>
 <text x="-5.08" y="5.08" size="1.778" layer="94">&gt;NAME</text>
-</symbol>
-<symbol name="SD-MODULE">
-<wire x1="-7.62" y1="12.7" x2="7.62" y2="12.7" width="0.254" layer="94"/>
-<wire x1="7.62" y1="12.7" x2="7.62" y2="-20.32" width="0.254" layer="94"/>
-<wire x1="7.62" y1="-20.32" x2="-7.62" y2="-20.32" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-20.32" x2="-7.62" y2="12.7" width="0.254" layer="94"/>
-<pin name="+3V3" x="-5.08" y="17.78" length="middle" direction="pwr" rot="R270"/>
-<pin name="+5V" x="5.08" y="17.78" length="middle" direction="pwr" rot="R270"/>
-<pin name="CS" x="-12.7" y="-2.54" length="middle" direction="in"/>
-<pin name="MOSI" x="-12.7" y="-5.08" length="middle" direction="in"/>
-<pin name="MISO" x="-12.7" y="-7.62" length="middle"/>
-<pin name="SCK" x="-12.7" y="-10.16" length="middle"/>
-<pin name="GND@1" x="-5.08" y="-25.4" length="middle" direction="pwr" rot="R90"/>
-<pin name="GND@2" x="5.08" y="-25.4" length="middle" direction="pwr" rot="R90"/>
 </symbol>
 <symbol name="LM7805">
 <wire x1="-10.16" y1="5.08" x2="12.7" y2="5.08" width="0.254" layer="94"/>
@@ -18137,6 +18171,26 @@ grid 2.54 mm</description>
 <pin name="VCC" x="2.54" y="15.24" length="middle" direction="pwr" rot="R270"/>
 <pin name="GND" x="2.54" y="-15.24" length="middle" direction="pwr" rot="R90"/>
 </symbol>
+<symbol name="112I">
+<wire x1="-12.7" y1="-12.7" x2="12.7" y2="-12.7" width="0.254" layer="94"/>
+<wire x1="12.7" y1="-12.7" x2="12.7" y2="10.16" width="0.254" layer="94"/>
+<wire x1="12.7" y1="10.16" x2="-12.7" y2="10.16" width="0.254" layer="94"/>
+<wire x1="-12.7" y1="10.16" x2="-12.7" y2="-12.7" width="0.254" layer="94"/>
+<text x="-10.16" y="10.668" size="1.27" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-15.24" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="DAT0(DO)" x="-15.24" y="-7.62" visible="pin" length="short"/>
+<pin name="DAT1" x="-15.24" y="-10.16" visible="pin" length="short"/>
+<pin name="DAT2" x="-15.24" y="7.62" visible="pin" length="short"/>
+<pin name="CD/DAT3(!CS!)" x="-15.24" y="5.08" visible="pin" length="short"/>
+<pin name="CMD(DI)" x="-15.24" y="2.54" visible="pin" length="short"/>
+<pin name="CLK(SCLK)" x="-15.24" y="-2.54" visible="pin" length="short"/>
+<pin name="S@1" x="15.24" y="-7.62" visible="pin" length="short" direction="pas" rot="R180"/>
+<pin name="S@2" x="15.24" y="-10.16" visible="pin" length="short" direction="pas" rot="R180"/>
+<pin name="CD" x="15.24" y="7.62" visible="pin" length="short" direction="oc" rot="R180"/>
+<pin name="GND" x="15.24" y="5.08" visible="pin" length="short" direction="pas" rot="R180"/>
+<pin name="VSS(GND)" x="-15.24" y="-5.08" visible="pin" length="short" direction="pwr"/>
+<pin name="VDD" x="-15.24" y="0" visible="pin" length="short" direction="pwr"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="RTC">
@@ -18152,28 +18206,6 @@ grid 2.54 mm</description>
 <connect gate="G$1" pin="SDA" pad="SDA"/>
 <connect gate="G$1" pin="SWQ" pad="SQW"/>
 <connect gate="G$1" pin="VCC" pad="VCC"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="SD-CARD">
-<gates>
-<gate name="G$1" symbol="SD-MODULE" x="0" y="2.54"/>
-</gates>
-<devices>
-<device name="SD-MODULE2X8-H" package="SD_MODULE-2X8H">
-<connects>
-<connect gate="G$1" pin="+3V3" pad="+3V3"/>
-<connect gate="G$1" pin="+5V" pad="+5V"/>
-<connect gate="G$1" pin="CS" pad="CS"/>
-<connect gate="G$1" pin="GND@1" pad="GND@1"/>
-<connect gate="G$1" pin="GND@2" pad="GND@2"/>
-<connect gate="G$1" pin="MISO" pad="MISO"/>
-<connect gate="G$1" pin="MOSI" pad="MOSI"/>
-<connect gate="G$1" pin="SCK" pad="SCK"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -18228,6 +18260,35 @@ grid 2.54 mm</description>
 <connect gate="G$1" pin="VCC" pad="16"/>
 <connect gate="G$1" pin="W0" pad="12"/>
 <connect gate="G$1" pin="W1" pad="4"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="ATTEND-MICROSD-112" prefix="J">
+<description>&lt;p&gt;&lt;b&gt;Attend microSD socket&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;Datasheet: &lt;a href="http://www.soselectronic.com/a_info/resource/f/112I-TXAR-R_B_1.pdf"&gt;Attend 112 microSD socket&lt;/a&gt;.&lt;/p&gt;</description>
+<gates>
+<gate name="G$1" symbol="112I" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="ATTEND-112">
+<connects>
+<connect gate="G$1" pin="CD" pad="CD"/>
+<connect gate="G$1" pin="CD/DAT3(!CS!)" pad="DAT3"/>
+<connect gate="G$1" pin="CLK(SCLK)" pad="CLK"/>
+<connect gate="G$1" pin="CMD(DI)" pad="CMD"/>
+<connect gate="G$1" pin="DAT0(DO)" pad="DAT0"/>
+<connect gate="G$1" pin="DAT1" pad="DAT1"/>
+<connect gate="G$1" pin="DAT2" pad="DAT2"/>
+<connect gate="G$1" pin="GND" pad="GND"/>
+<connect gate="G$1" pin="S@1" pad="S1"/>
+<connect gate="G$1" pin="S@2" pad="S2"/>
+<connect gate="G$1" pin="VDD" pad="VDD"/>
+<connect gate="G$1" pin="VSS(GND)" pad="VSS"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -18374,16 +18435,12 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
 <part name="IC3" library="lm1117" deviceset="LM1117IMPX-*" device="" technology="3.3"/>
 <part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
-<part name="P+2" library="supply1" deviceset="+5V" device=""/>
 <part name="U$3" library="MyLib" deviceset="RTC" device="RTC_MODULE-1X6H"/>
-<part name="GND17" library="supply1" deviceset="GND" device=""/>
-<part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="P+3" library="supply1" deviceset="+5V" device=""/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="R0805" value="1.1k"/>
 <part name="R12" library="rcl" deviceset="R-EU_" device="R0805" value="1.1k"/>
 <part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
-<part name="U$2" library="MyLib" deviceset="SD-CARD" device="SD-MODULE2X8-H"/>
 <part name="U$4" library="MyLib" deviceset="LM7805" device="TO-220-VERT"/>
 <part name="GND20" library="supply1" deviceset="GND" device=""/>
 <part name="X1" library="con-molex" deviceset="22-23-2021" device=""/>
@@ -18434,6 +18491,11 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 <part name="LED2" library="led" deviceset="LED" device="CHIP-LED0805"/>
 <part name="LED3" library="led" deviceset="LED" device="CHIP-LED0805"/>
 <part name="LED4" library="led" deviceset="LED" device="CHIP-LED0805"/>
+<part name="J1" library="MyLib" deviceset="ATTEND-MICROSD-112" device=""/>
+<part name="GND17" library="supply1" deviceset="GND" device=""/>
+<part name="R20" library="rcl" deviceset="R-EU_" device="R0805" value="10k"/>
+<part name="+3V17" library="supply1" deviceset="+3V3" device=""/>
+<part name="GND18" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -18497,16 +18559,12 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 <instance part="GND12" gate="1" x="-213.36" y="-68.58"/>
 <instance part="IC3" gate="G$1" x="-213.36" y="-58.42"/>
 <instance part="+3V1" gate="G$1" x="-187.96" y="-50.8"/>
-<instance part="P+2" gate="1" x="45.72" y="-15.24"/>
 <instance part="U$3" gate="G$1" x="91.44" y="-38.1"/>
-<instance part="GND17" gate="1" x="35.56" y="-63.5"/>
-<instance part="GND18" gate="1" x="45.72" y="-63.5"/>
 <instance part="GND19" gate="1" x="91.44" y="-60.96"/>
 <instance part="P+3" gate="1" x="91.44" y="-15.24"/>
 <instance part="R10" gate="G$1" x="71.12" y="-22.86" rot="R90"/>
 <instance part="R12" gate="G$1" x="66.04" y="-22.86" rot="R90"/>
 <instance part="+3V6" gate="G$1" x="71.12" y="-15.24"/>
-<instance part="U$2" gate="G$1" x="40.64" y="-35.56"/>
 <instance part="U$4" gate="G$1" x="-215.9" y="-96.52"/>
 <instance part="GND20" gate="1" x="-215.9" y="-114.3"/>
 <instance part="X1" gate="-1" x="-241.3" y="-99.06" rot="R180"/>
@@ -18566,6 +18624,11 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 <instance part="LED2" gate="G$1" x="-203.2" y="-7.62" rot="R90"/>
 <instance part="LED3" gate="G$1" x="-203.2" y="0" rot="R90"/>
 <instance part="LED4" gate="G$1" x="-203.2" y="7.62" rot="R90"/>
+<instance part="J1" gate="G$1" x="-86.36" y="-96.52"/>
+<instance part="GND17" gate="1" x="-71.12" y="-114.3"/>
+<instance part="R20" gate="G$1" x="-71.12" y="-83.82" rot="R90"/>
+<instance part="+3V17" gate="G$1" x="-71.12" y="-76.2"/>
+<instance part="GND18" gate="1" x="-104.14" y="-114.3"/>
 </instances>
 <busses>
 </busses>
@@ -18678,14 +18741,6 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 <pinref part="GND19" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="GND17" gate="1" pin="GND"/>
-<pinref part="U$2" gate="G$1" pin="GND@1"/>
-</segment>
-<segment>
-<pinref part="GND18" gate="1" pin="GND"/>
-<pinref part="U$2" gate="G$1" pin="GND@2"/>
-</segment>
-<segment>
 <pinref part="U$4" gate="G$1" pin="GND"/>
 <pinref part="GND20" gate="1" pin="GND"/>
 </segment>
@@ -18779,15 +18834,29 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 <junction x="-198.12" y="-15.24"/>
 <wire x1="-198.12" y1="-15.24" x2="-198.12" y2="-20.32" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="GND"/>
+<pinref part="J1" gate="G$1" pin="S@2"/>
+<wire x1="-71.12" y1="-91.44" x2="-71.12" y2="-104.14" width="0.1524" layer="91"/>
+<pinref part="GND17" gate="1" pin="GND"/>
+<wire x1="-71.12" y1="-104.14" x2="-71.12" y2="-106.68" width="0.1524" layer="91"/>
+<wire x1="-71.12" y1="-106.68" x2="-71.12" y2="-111.76" width="0.1524" layer="91"/>
+<wire x1="-71.12" y1="-111.76" x2="-71.12" y2="-106.68" width="0.1524" layer="91"/>
+<junction x="-71.12" y="-106.68"/>
+<pinref part="J1" gate="G$1" pin="S@1"/>
+<junction x="-71.12" y="-104.14"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="VSS(GND)"/>
+<wire x1="-101.6" y1="-101.6" x2="-104.14" y2="-101.6" width="0.1524" layer="91"/>
+<wire x1="-104.14" y1="-101.6" x2="-104.14" y2="-111.76" width="0.1524" layer="91"/>
+<pinref part="GND18" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="+5V" class="0">
 <segment>
 <pinref part="U$3" gate="G$1" pin="VCC"/>
 <pinref part="P+3" gate="1" pin="+5V"/>
-</segment>
-<segment>
-<pinref part="P+2" gate="1" pin="+5V"/>
-<pinref part="U$2" gate="G$1" pin="+5V"/>
 </segment>
 <segment>
 <pinref part="U$4" gate="G$1" pin="VOUT"/>
@@ -18850,9 +18919,9 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 <label x="-55.88" y="-10.16" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="15.24" y1="-40.64" x2="27.94" y2="-40.64" width="0.1524" layer="91"/>
-<label x="15.24" y="-40.64" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="MOSI"/>
+<pinref part="J1" gate="G$1" pin="CMD(DI)"/>
+<wire x1="-101.6" y1="-93.98" x2="-116.84" y2="-93.98" width="0.1524" layer="91"/>
+<label x="-114.3" y="-93.98" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="MISO" class="0">
@@ -18867,9 +18936,9 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 <label x="-55.88" y="-12.7" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="27.94" y1="-43.18" x2="15.24" y2="-43.18" width="0.1524" layer="91"/>
-<label x="15.24" y="-43.18" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="MISO"/>
+<pinref part="J1" gate="G$1" pin="DAT0(DO)"/>
+<wire x1="-101.6" y1="-104.14" x2="-116.84" y2="-104.14" width="0.1524" layer="91"/>
+<label x="-114.3" y="-104.14" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="SCK" class="0">
@@ -18884,9 +18953,9 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 <label x="-55.88" y="-15.24" size="1.778" layer="95"/>
 </segment>
 <segment>
-<wire x1="27.94" y1="-45.72" x2="15.24" y2="-45.72" width="0.1524" layer="91"/>
-<label x="15.24" y="-45.72" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="SCK"/>
+<pinref part="J1" gate="G$1" pin="CLK(SCLK)"/>
+<wire x1="-101.6" y1="-99.06" x2="-116.84" y2="-99.06" width="0.1524" layer="91"/>
+<label x="-114.3" y="-99.06" size="1.778" layer="95"/>
 </segment>
 </net>
 <net name="RESET" class="0">
@@ -19121,6 +19190,15 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 <pinref part="U$5" gate="G$1" pin="VCC"/>
 <pinref part="+3V16" gate="G$1" pin="+3V3"/>
 </segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="VDD"/>
+<wire x1="-101.6" y1="-96.52" x2="-104.14" y2="-96.52" width="0.1524" layer="91"/>
+<wire x1="-104.14" y1="-96.52" x2="-104.14" y2="-78.74" width="0.1524" layer="91"/>
+<pinref part="R20" gate="G$1" pin="2"/>
+<wire x1="-104.14" y1="-78.74" x2="-71.12" y2="-78.74" width="0.1524" layer="91"/>
+<pinref part="+3V17" gate="G$1" pin="+3V3"/>
+<junction x="-71.12" y="-78.74"/>
+</segment>
 </net>
 <net name="N$10" class="0">
 <segment>
@@ -19258,11 +19336,6 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 </segment>
 </net>
 <net name="CS_SD" class="0">
-<segment>
-<wire x1="27.94" y1="-38.1" x2="15.24" y2="-38.1" width="0.1524" layer="91"/>
-<label x="15.24" y="-38.1" size="1.778" layer="95"/>
-<pinref part="U$2" gate="G$1" pin="CS"/>
-</segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="PB0(ICP)"/>
 <wire x1="-60.96" y1="-2.54" x2="-50.8" y2="-2.54" width="0.1524" layer="91"/>
@@ -19458,6 +19531,17 @@ Source: http://cache.national.com/ds/LM/LM321.pdf</description>
 <segment>
 <pinref part="R19" gate="G$1" pin="1"/>
 <pinref part="LED4" gate="G$1" pin="A"/>
+</segment>
+</net>
+<net name="SD_DETECT" class="0">
+<segment>
+<pinref part="J1" gate="G$1" pin="CD"/>
+<pinref part="R20" gate="G$1" pin="1"/>
+<wire x1="-71.12" y1="-88.9" x2="-40.64" y2="-88.9" width="0.1524" layer="91"/>
+<label x="-55.88" y="-88.9" size="1.778" layer="95"/>
+<pinref part="IC1" gate="G$1" pin="ADC6"/>
+<wire x1="-60.96" y1="27.94" x2="-40.64" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="-40.64" y1="27.94" x2="-40.64" y2="-88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
